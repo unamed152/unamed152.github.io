@@ -91,24 +91,24 @@
 
   var BAND_SPREAD = 0.36;   /* 粒子带纵向厚度（占屏高比例）*/
 
-  /* 两根束带：同中心、相位差 π → 交叠穿插 */
+  /* 两根束带：分列左右两侧，摆幅让它们在画布中部交叠穿插 */
   var TW = {
-    cx: 0.58,         /* 画布中心（画布已扩到屏幕最右，故右移）*/
-    amp: 0.30,        /* 横向摆幅 */
-    freq: 0.0050,
-    w: 0.30,
+    amp: 0.30,        /* 横向摆幅（画布宽比例）*/
+    freq: 0.0050,     /* 纵向频率 */
+    w: 0.13,          /* 带宽（收窄，避免糊成一坨）*/
     spins: 1.4,       /* 滚动加成：滚完一屏扭转 1.4 圈 */
-    idle: 0.0032      /* 自主缓慢扭动速度（不滚动时也在动）*/
+    idle: 0.0032,     /* 自主缓慢扭动速度（不滚动时也在动）*/
+    centers: [0.34, 0.66]   /* 两条束带各自的中心位置 */
   };
 
   function band(index, t) {
-    var cx = W * TW.cx;
+    var cx = W * TW.centers[index];
     var amp = W * TW.amp;
     var halfW = W * TW.w * 0.5;
     var dir = index === 0 ? 1 : -1;
 
     /* 自主缓慢 + 滚动加成 */
-    var phase = index * Math.PI
+    var phase = index * Math.PI * 0.85
               + t * TW.idle * dir
               + progress * Math.PI * 2 * TW.spins;
 
