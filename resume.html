@@ -130,9 +130,11 @@
   .back {
     max-width: 800px; margin: 0 auto 12px;
     font-size: 9.5pt;
+    display: flex; justify-content: space-between; align-items: baseline;
   }
   .back a { color: #2f68b8; text-decoration: none; }
   .back a:hover { text-decoration: underline; }
+  .back .dl { font-weight: 600; }
 
   @media print {
     body { background: #fff; font-size: 9.5pt; }
@@ -157,7 +159,10 @@
 </head>
 <body>
 
-<div class="back"><a href="index.html">← 返回主页</a></div>
+<div class="back">
+  <a href="index.html">← 返回主页</a>
+  <a class="dl" href="resume.pdf" download>下载 PDF 版 ↓</a>
+</div>
 
 <div class="page">
 
