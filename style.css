@@ -162,12 +162,13 @@ main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding
   position: fixed;
   top: 0;
   right: 0;
-  width: 88px;
+  width: 64px;
   height: 100vh;
-  z-index: 2147483647;
+  z-index: 2147483646;
   pointer-events: none;
 }
-@media (max-width: 900px) {
+/* 内容区（900px 居中）两侧不足 64px 时隐藏，避免压住正文 */
+@media (max-width: 1024px) {
   #fx { display: none; }
 }
 
