@@ -167,12 +167,12 @@ main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding
   pointer-events: none;
 }
 
-/* ===== 右侧束带 + 粒子（贴内容区右边缘）===== */
+/* ===== 右侧束带 + 粒子（左起内容右边缘 → 右至屏幕最右）===== */
 #fx {
   position: fixed;
   top: 0;
   left: calc(50% + 446px);
-  width: 76px;
+  right: 0;
   height: 100vh;
   z-index: 2147483646;
   pointer-events: none;
@@ -414,7 +414,7 @@ footer {
   font-variant-numeric: tabular-nums;
 }
 .tl-desc { font-size: 13.5px; color: #a8b3c6; line-height: 1.66; }
-.tl-desc b { color: #e0b457; font-weight: 600; }
+.tl-desc b { font-weight: inherit; color: inherit; }
 
 @media (max-width: 600px) {
   .hero-photo { width: 88px; height: 117px; }

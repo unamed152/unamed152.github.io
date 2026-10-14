@@ -71,7 +71,7 @@
     for (var i = 0; i < n; i++) {
       parts.push({
         off: Math.random() * 2 - 1,                       /* 相对带中心的偏移 */
-        x: W * (0.24 + Math.random() * 0.68),
+        x: W * (0.12 + Math.random() * 0.84),             /* 铺满整条右侧带 */
         r: 0.9 + Math.random() * 1.8,
         a: 0.55 + Math.random() * 0.45,
         col: PCOLORS[(Math.random() * PCOLORS.length) | 0],
@@ -93,8 +93,8 @@
 
   /* 两根束带：同中心、相位差 π → 交叠穿插 */
   var TW = {
-    cx: 0.42,
-    amp: 0.28,
+    cx: 0.58,         /* 画布中心（画布已扩到屏幕最右，故右移）*/
+    amp: 0.30,        /* 横向摆幅 */
     freq: 0.0050,
     w: 0.30,
     spins: 1.4,       /* 滚动加成：滚完一屏扭转 1.4 圈 */
