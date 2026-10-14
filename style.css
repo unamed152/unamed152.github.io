@@ -87,9 +87,17 @@ body {
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  padding: 96px 24px 72px;
-  text-align: center;
+  padding: 88px 24px 66px;
+  text-align: left;
 }
+/* 头部：左文字 + 右上角照片 */
+.hero-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 22px;
+}
+.hero-text { flex: 1; min-width: 0; }
 .avatar {
   width: 92px; height: 92px;
   margin: 0 auto 24px;
@@ -118,12 +126,12 @@ body {
   margin-bottom: 20px;
 }
 .hero-desc {
-  max-width: 540px;
-  margin: 0 auto 34px;
+  max-width: 640px;
+  margin: 0 0 30px;
   color: #b6c0d2;
-  font-size: 16px;
+  font-size: 15.5px;
 }
-.hero-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero-links { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btn {
   display: inline-block;
@@ -222,8 +230,8 @@ main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding
   border-color: rgba(110,168,254,0.5);
   background: var(--card-hover);
 }
-.proj h3 { font-size: 16.5px; margin-bottom: 10px; }
-.proj p { font-size: 14.5px; color: var(--text-dim); margin-bottom: 14px; }
+.proj h3 { font-size: 15.5px; margin-bottom: 8px; }
+.proj p { font-size: 13.5px; color: var(--text-dim); line-height: 1.62; margin-bottom: 13px; }
 .proj-meta {
   font-size: 12.5px;
   color: var(--accent);
@@ -276,15 +284,20 @@ footer {
   .card { padding: 22px; }
 }
 
-/* ===== Hero 头像 ===== */
+/* ===== Hero 头像（右上角，小尺寸）===== */
 .hero-photo {
-  width: 108px; height: 144px;
+  flex: 0 0 92px;
+  width: 92px;
+  height: 128px;
   object-fit: cover;
-  display: block;
-  margin: 0 auto 22px;
-  border-radius: 14px;
+  border-radius: 9px;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 60px -20px rgba(110, 168, 254, 0.45);
+  box-shadow: 0 16px 44px -18px rgba(110, 168, 254, 0.45);
+}
+.hero-dates {
+  font-size: 12.5px;
+  color: #6d7b90;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ===== 技能网格 ===== */
@@ -314,9 +327,9 @@ footer {
   margin-bottom: 5px;
 }
 .skill-v {
-  font-size: 14.5px;
+  font-size: 13.5px;
   color: #b6c0d2;
-  line-height: 1.62;
+  line-height: 1.58;
 }
 
 /* ===== 经历时间线 ===== */
@@ -364,8 +377,14 @@ footer {
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.tl-role { font-size: 13.5px; color: var(--accent); margin: 3px 0 6px; }
-.tl-desc { font-size: 14.5px; color: #a8b3c6; line-height: 1.68; }
+.tl-role { font-size: 13px; color: var(--accent); margin: 3px 0 6px; }
+.tl-date-inline {
+  font-size: 12px;
+  color: #6d7b90;
+  margin-left: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.tl-desc { font-size: 13.5px; color: #a8b3c6; line-height: 1.66; }
 .tl-desc b { color: #e0b457; font-weight: 600; }
 
 @media (max-width: 600px) {
@@ -394,20 +413,22 @@ footer {
   .nav-links a { font-size: 13.5px; white-space: nowrap; }
 
   /* Hero */
-  .hero { padding: 52px 18px 44px; }
+  .hero { padding: 46px 18px 40px; }
+  .hero-head { gap: 13px; }
   .hero-photo {
-    width: 84px; height: 112px;
-    margin-bottom: 18px;
-    border-radius: 12px;
+    flex: 0 0 74px;
+    width: 74px; height: 103px;
+    border-radius: 7px;
   }
   .title {
-    font-size: clamp(30px, 11vw, 44px);
+    font-size: clamp(28px, 10.5vw, 40px);
     letter-spacing: -0.01em;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
   }
-  .subtitle { font-size: 14px; letter-spacing: .04em; margin-bottom: 16px; }
-  .hero-desc { font-size: 14.5px; line-height: 1.72; margin-bottom: 26px; }
-  .hero-links { gap: 10px; }
+  .subtitle { font-size: 13.5px; letter-spacing: .03em; margin-bottom: 14px; }
+  .hero-desc { font-size: 13.5px; line-height: 1.7; margin-bottom: 20px; max-width: none; }
+  .hero-dates { font-size: 11.5px; }
+  .hero-links { gap: 9px; }
   .btn {
     padding: 11px 22px;
     font-size: 14.5px;
