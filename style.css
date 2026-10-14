@@ -157,43 +157,18 @@ body {
 /* 区块 */
 main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 24px 40px; }
 
-/* ===== 右侧滚动联动特效（束带 + 粒子 + 滑块）===== */
-.scroll-fx {
+/* ===== 右侧滚动联动特效（贴浏览器原生滚动条）===== */
+#fx {
   position: fixed;
   top: 0;
   right: 0;
-  width: min(19vw, 230px);
+  width: 88px;
   height: 100vh;
-  z-index: 4;
+  z-index: 2147483647;
   pointer-events: none;
 }
-#fx {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.fx-rail {
-  position: absolute;
-  right: 20px;
-  top: 16vh;
-  bottom: 16vh;
-  width: 2px;
-  border-radius: 2px;
-  background: rgba(110, 168, 254, 0.16);
-}
-.fx-thumb {
-  position: absolute;
-  left: 50%;
-  margin-left: -4px;
-  top: 0;
-  width: 8px;
-  height: 58px;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #a78bfa, #6ea8fe);
-  box-shadow: 0 0 20px rgba(110, 168, 254, 0.75), 0 0 7px rgba(167, 139, 250, 0.9);
-}
 @media (max-width: 900px) {
-  .scroll-fx { display: none; }
+  #fx { display: none; }
 }
 
 /* ===== 滚动动效 ===== */
