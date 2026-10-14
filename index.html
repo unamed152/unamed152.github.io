@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>unamed</title>
+<meta name="description" content="unamed 的个人主页">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐋</text></svg>">
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">unamed</span>
+    <div class="nav-links">
+      <a href="#about">关于</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="resume.html">简历</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="avatar">🐋</div>
+  <h1 class="title">unamed</h1>
+  <p class="subtitle">AI 绘画 · ComfyUI · 逆向工程 · 插件折腾</p>
+  <p class="hero-desc">
+    在自己的机器上把东西跑起来，然后拆开看看它是怎么工作的。
+  </p>
+  <div class="hero-links">
+    <a class="btn" href="resume.html">查看简历</a>
+    <a class="btn ghost" href="https://github.com/unamed152" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</header>
+
+<main>
+
+<section id="about" class="section">
+  <h2><span class="num">01</span> 关于我</h2>
+  <div class="card">
+    <p>
+      喜欢把工具链从头搭起来 —— 本地部署模型、调参出图、拆开闭源软件看它的实现，
+      再把这些折腾沉淀成能复用的脚本和配置。
+    </p>
+    <p>
+      目前主要在玩：本地 Stable Diffusion 工作流、桌面端 AI 工具链、
+      以及一些逆向与自动化的小工具。
+    </p>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <h2><span class="num">02</span> 技能</h2>
+  <div class="tags">
+    <span class="tag">ComfyUI</span>
+    <span class="tag">Stable Diffusion</span>
+    <span class="tag">Python</span>
+    <span class="tag">CUDA / PyTorch</span>
+    <span class="tag">逆向工程</span>
+    <span class="tag">MCP / LLM 工具链</span>
+    <span class="tag">Windows 自动化</span>
+    <span class="tag">PowerShell</span>
+    <span class="tag">Node.js</span>
+    <span class="tag">Git</span>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <h2><span class="num">03</span> 项目</h2>
+  <div class="grid">
+    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
+      <h3>本地 AI 绘画环境</h3>
+      <p>ComfyUI + SDXL 全流程搭建：模型管理、低显存优化、批量出图脚本。</p>
+      <span class="proj-meta">ComfyUI · PyTorch · CUDA</span>
+    </a>
+    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
+      <h3>桌面工具链插件</h3>
+      <p>为本地 AI 桌面端写的插件与补丁，扩展其工具能力与交互。</p>
+      <span class="proj-meta">Node.js · 插件开发</span>
+    </a>
+    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
+      <h3>自动化脚本集</h3>
+      <p>用 PowerShell / Python 把重复操作自动化，含窗口控制与批处理。</p>
+      <span class="proj-meta">PowerShell · Python</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2><span class="num">04</span> 联系</h2>
+  <div class="card contact-card">
+    <div class="contact-item">
+      <span class="label">Email</span>
+      <a href="#" class="reveal" data-v="MTQ2MTAzNTY4NEBxcS5jb20=" data-t="mail">点击查看</a>
+    </div>
+    <div class="contact-item">
+      <span class="label">GitHub</span>
+      <a href="https://github.com/unamed152" target="_blank" rel="noopener">@unamed152</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> unamed · Built with plain HTML/CSS · Hosted on GitHub Pages</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // 平滑滚动
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  // 滚动淡入
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) { if (en.isIntersecting) en.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.section, .proj').forEach(function (el) { io.observe(el); });
+
+  // 联系方式防爬：点击才揭示
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (el.hasAttribute('data-done')) return;
+      var v;
+      try { v = atob(el.dataset.v); } catch (err) { v = el.dataset.v || ''; }
+      el.textContent = v;
+      el.setAttribute('data-done', '1');
+      if (el.dataset.t === 'mail') el.href = 'mailto:' + v;
+    });
+  });
+</script>
+
+</body>
+</html>
