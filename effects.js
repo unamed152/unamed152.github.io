@@ -26,20 +26,20 @@
   }
 
   function build() {
-    COLORS = ['110,168,254', '167,139,250', '59,111,212', '126,196,255'];
+    COLORS = ['110,168,254', '167,139,250', '59,111,212', '126,196,255', '190,215,255'];
     var narrow = W < 700;
-    var count = Math.max(24, Math.min(narrow ? 40 : 86, Math.round((W * H) / 24000)));
+    var count = Math.max(30, Math.min(narrow ? 50 : 115, Math.round((W * H) / 19000)));
     parts = [];
     for (var i = 0; i < count; i++) {
       parts.push({
         x: Math.random() * W,
         y: Math.random() * H,
-        r: 0.6 + Math.random() * 2.1,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: -0.05 - Math.random() * 0.22,
-        a: 0.14 + Math.random() * 0.48,
+        r: 0.7 + Math.random() * 2.3,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: -0.06 - Math.random() * 0.24,
+        a: 0.16 + Math.random() * 0.52,
         ph: Math.random() * Math.PI * 2,
-        sp: 0.008 + Math.random() * 0.016,
+        sp: 0.008 + Math.random() * 0.018,
         c: COLORS[(Math.random() * COLORS.length) | 0]
       });
     }
@@ -47,9 +47,9 @@
 
   /* 三条「束带」：上下两条同相位正弦波构成一条扭动的光带 */
   var RIBBONS = [
-    { y: 0.24, amp: 52, freq: 0.0030, sp: 0.34, w: 80,  a: 0.15 },
-    { y: 0.50, amp: 68, freq: 0.0022, sp: -0.26, w: 104, a: 0.11 },
-    { y: 0.77, amp: 40, freq: 0.0042, sp: 0.44, w: 62,  a: 0.09 }
+    { y: 0.22, amp: 54, freq: 0.0030, sp: 0.34, w: 44, a: 0.22 },
+    { y: 0.50, amp: 70, freq: 0.0022, sp: -0.26, w: 56, a: 0.17 },
+    { y: 0.78, amp: 38, freq: 0.0042, sp: 0.44, w: 34, a: 0.14 }
   ];
 
   function ribbon(cfg) {
@@ -77,6 +77,16 @@
     ctx.closePath();
     ctx.fillStyle = grad;
     ctx.fill();
+
+    /* 上下沿描一条细高光，让「带」有实感 */
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(150,195,255,' + (cfg.a * 0.55) + ')';
+    ctx.beginPath();
+    for (x = 0; x <= W; x += step) {
+      var yy = waveY(x);
+      if (x === 0) ctx.moveTo(x, yy); else ctx.lineTo(x, yy);
+    }
+    ctx.stroke();
   }
 
   function frame() {
