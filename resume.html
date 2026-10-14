@@ -149,11 +149,45 @@
   }
 
   @media (max-width: 560px) {
-    .page { padding: 20px 18px 28px; border-radius: 0; }
-    header { gap: 14px; }
-    .photo { flex: 0 0 70px; width: 70px; height: 97px; }
+    body { font-size: 10pt; background: #fff; }
+    .page {
+      padding: 18px 16px 28px;
+      border-radius: 0;
+      box-shadow: none;
+      max-width: none;
+      margin: 0;
+    }
+    .back { padding: 12px 16px 0; font-size: 14px; }
+
+    header { gap: 12px; padding-bottom: 10px; margin-bottom: 13px; }
     h1 { font-size: 17pt; letter-spacing: 2px; }
-    .skill-table td.k { width: 70px; }
+    .tagline { font-size: 10pt; margin-bottom: 8px; }
+    .photo { flex: 0 0 68px; width: 68px; height: 94px; border-radius: 4px; }
+    .contact { gap: 3px 12px; font-size: 9.4pt; }
+
+    h2 { font-size: 11pt; padding-left: 8px; border-left-width: 3px; margin-bottom: 7px; }
+
+    /* 条目：标题与日期改纵向，避免挤在一行 */
+    .item-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .item-title { font-size: 10.4pt; line-height: 1.5; }
+    .item-date { font-size: 9.2pt; }
+    .item-role { font-size: 9.6pt; }
+    .item-body li { font-size: 9.8pt; padding-left: 13px; line-height: 1.62; }
+
+    /* 技能表格：标签列收窄，描述允许换行 */
+    .skill-table td { padding: 5px 0; }
+    .skill-table td.k { width: 62px; font-size: 9.4pt; padding-right: 8px; }
+    .skill-table td.v { font-size: 9.6pt; line-height: 1.6; }
+
+    .summary p { font-size: 9.8pt; line-height: 1.7; }
+    .summary p + p { margin-top: 7px; }
+  }
+
+  @media (max-width: 380px) {
+    .page { padding: 14px 12px 24px; }
+    .back { padding: 10px 12px 0; }
+    .photo { flex: 0 0 58px; width: 58px; height: 80px; }
+    .skill-table td.k { width: 54px; font-size: 9.2pt; }
   }
 </style>
 </head>
@@ -187,11 +221,12 @@
         <div>
           <span class="item-title">湖北工业大学</span>
         </div>
-        <div class="item-date">2022.09 – 2025.07</div>
+        <div class="item-date">2019.09 – 2026.07</div>
       </div>
       <div class="item-role">数据科学与大数据技术（本科）</div>
       <div class="item-body">
         <ul>
+          <li>2021.09 – 2023.09 期间应征入伍，保留学籍休学，退伍后复学</li>
           <li>主修课程：计算机导论、C 语言、离散数学、统计分析方法、数据结构与算法、计算机组成原理、
               操作系统、大数据导论、计算机网络、数据存储、高性能计算、人工智能、机器学习与数据挖掘</li>
         </ul>
