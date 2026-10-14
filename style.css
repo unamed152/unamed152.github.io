@@ -276,6 +276,105 @@ footer {
   .card { padding: 22px; }
 }
 
+/* ===== Hero 头像 ===== */
+.hero-photo {
+  width: 108px; height: 144px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px -20px rgba(110, 168, 254, 0.45);
+}
+
+/* ===== 技能网格 ===== */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+.skill-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.skill-item:hover {
+  border-color: rgba(110, 168, 254, 0.45);
+  background: var(--card-hover);
+  transform: translateY(-2px);
+}
+.skill-k {
+  display: block;
+  font-size: 12.5px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: .06em;
+  margin-bottom: 5px;
+}
+.skill-v {
+  font-size: 14.5px;
+  color: #b6c0d2;
+  line-height: 1.62;
+}
+
+/* ===== 经历时间线 ===== */
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg,
+              rgba(110, 168, 254, 0.55),
+              rgba(167, 139, 250, 0.28),
+              transparent);
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.tl-item.in { opacity: 1; transform: none; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -25px; top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(110, 168, 254, 0.12);
+}
+.tl-military .tl-dot {
+  border-color: #e0b457;
+  box-shadow: 0 0 0 4px rgba(224, 180, 87, 0.14);
+}
+.tl-head {
+  display: flex; justify-content: space-between;
+  align-items: baseline; gap: 14px; flex-wrap: wrap;
+}
+.tl-title { font-size: 16px; font-weight: 600; color: var(--text); }
+.tl-date {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.tl-role { font-size: 13.5px; color: var(--accent); margin: 3px 0 6px; }
+.tl-desc { font-size: 14.5px; color: #a8b3c6; line-height: 1.68; }
+.tl-desc b { color: #e0b457; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .hero-photo { width: 88px; height: 117px; }
+  .skill-grid { grid-template-columns: 1fr; }
+  .tl-head { gap: 4px; }
+  .tl-date { font-size: 12px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }

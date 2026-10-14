@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>unamed</title>
-<meta name="description" content="unamed 的个人主页">
+<title>张荪宇 · 后端开发 / 大数据 / 人工智能</title>
+<meta name="description" content="张荪宇的个人主页 —— 后端开发 · 大数据 · 人工智能">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐋</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
 </head>
 <body>
 
@@ -15,11 +15,11 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <span class="brand">unamed</span>
+    <span class="brand">张荪宇</span>
     <div class="nav-links">
       <a href="#about">关于</a>
       <a href="#skills">技能</a>
-      <a href="#projects">项目</a>
+      <a href="#experience">经历</a>
       <a href="resume.html">简历</a>
       <a href="#contact">联系</a>
     </div>
@@ -27,14 +27,16 @@
 </nav>
 
 <header class="hero">
-  <div class="avatar">🐋</div>
-  <h1 class="title">unamed</h1>
-  <p class="subtitle">AI 绘画 · ComfyUI · 逆向工程 · 插件折腾</p>
+  <img class="hero-photo" src="photo.jpg" alt="张荪宇">
+  <h1 class="title">张荪宇</h1>
+  <p class="subtitle">后端开发 · 大数据 · 人工智能</p>
   <p class="hero-desc">
-    在自己的机器上把东西跑起来，然后拆开看看它是怎么工作的。
+    湖北工业大学 · 数据科学与大数据技术<br>
+    曾服役于中国人民解放军驻香港部队
   </p>
   <div class="hero-links">
     <a class="btn" href="resume.html">查看简历</a>
+    <a class="btn ghost" href="resume.pdf" download>下载 PDF</a>
     <a class="btn ghost" href="https://github.com/unamed152" target="_blank" rel="noopener">GitHub</a>
   </div>
 </header>
@@ -45,50 +47,127 @@
   <h2><span class="num">01</span> 关于我</h2>
   <div class="card">
     <p>
-      喜欢把工具链从头搭起来 —— 本地部署模型、调参出图、拆开闭源软件看它的实现，
-      再把这些折腾沉淀成能复用的脚本和配置。
+      具备扎实的后端开发与大数据技术功底，能够独立完成系统设计与开发任务。
+      熟悉 Hadoop 生态（Spark / Hive / MySQL），理解并能复现 Transformer、SVM 等人工智能核心算法。
     </p>
     <p>
-      目前主要在玩：本地 Stable Diffusion 工作流、桌面端 AI 工具链、
-      以及一些逆向与自动化的小工具。
+      目前从事 AI 智能体（AI Agent）方向的工作流开发，构建自动化任务处理系统。
+      军旅生涯铸就了较强的纪律意识与执行力，也让我在跨部门协作中更擅长沟通与推进。
     </p>
   </div>
 </section>
 
 <section id="skills" class="section">
   <h2><span class="num">02</span> 技能</h2>
-  <div class="tags">
-    <span class="tag">ComfyUI</span>
-    <span class="tag">Stable Diffusion</span>
-    <span class="tag">Python</span>
-    <span class="tag">CUDA / PyTorch</span>
-    <span class="tag">逆向工程</span>
-    <span class="tag">MCP / LLM 工具链</span>
-    <span class="tag">Windows 自动化</span>
-    <span class="tag">PowerShell</span>
-    <span class="tag">Node.js</span>
-    <span class="tag">Git</span>
+  <div class="skill-grid">
+    <div class="skill-item">
+      <span class="skill-k">编程语言</span>
+      <span class="skill-v">C · Java · Python · Scala</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-k">后端技术</span>
+      <span class="skill-v">Hadoop 生态（Spark / Hive / MySQL）· 分布式服务器 · 云计算平台</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-k">人工智能</span>
+      <span class="skill-v">Transformer · SVM 算法复现与优化 · AI 智能体工作流</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-k">数据平台</span>
+      <span class="skill-v">神策 · 友盟 · 内部数仓（数据查询与分析）</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-k">证书</span>
+      <span class="skill-v">计算机二级 · CSP · 大学英语四级（CET-4）</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-k">办公</span>
+      <span class="skill-v">Windows 平台各类软件 · Word / Excel / PowerPoint</span>
+    </div>
   </div>
 </section>
 
-<section id="projects" class="section">
-  <h2><span class="num">03</span> 项目</h2>
-  <div class="grid">
-    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
-      <h3>本地 AI 绘画环境</h3>
-      <p>ComfyUI + SDXL 全流程搭建：模型管理、低显存优化、批量出图脚本。</p>
-      <span class="proj-meta">ComfyUI · PyTorch · CUDA</span>
-    </a>
-    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
-      <h3>桌面工具链插件</h3>
-      <p>为本地 AI 桌面端写的插件与补丁，扩展其工具能力与交互。</p>
-      <span class="proj-meta">Node.js · 插件开发</span>
-    </a>
-    <a class="proj" href="https://github.com/unamed152" target="_blank" rel="noopener">
-      <h3>自动化脚本集</h3>
-      <p>用 PowerShell / Python 把重复操作自动化，含窗口控制与批处理。</p>
-      <span class="proj-meta">PowerShell · Python</span>
-    </a>
+<section id="experience" class="section">
+  <h2><span class="num">03</span> 经历</h2>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">湖北工业大学</span>
+        <span class="tl-date">2023.09 – 2026.07</span>
+      </div>
+      <div class="tl-role">数据科学与大数据技术（本科）</div>
+      <p class="tl-desc">
+        主修：C 语言、数据结构与算法、计算机组成原理、操作系统、计算机网络、数据库、
+        大数据导论、高性能计算、人工智能、机器学习与数据挖掘
+      </p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">人工智能智能体开发</span>
+        <span class="tl-date">2025.06 – 至今</span>
+      </div>
+      <div class="tl-role">AI Agent 开发工程师</div>
+      <p class="tl-desc">
+        基于大模型 API 构建智能体工作流，实现自动化任务处理系统；负责后端接口设计与开发，
+        确保智能体与各服务模块的数据交互稳定可靠。
+      </p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">课后实践项目：数据爬取与协同网站上线</span>
+        <span class="tl-date">2025.06</span>
+      </div>
+      <div class="tl-role">全栈开发 / 团队协作</div>
+      <p class="tl-desc">
+        与同学协作完成数据爬取、前后端开发及网站上线全流程；负责后端接口设计与数据处理，
+        实现爬取数据的存储、清洗与展示。
+      </p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">大数据后端服务器与人工智能核心算法开发</span>
+        <span class="tl-date">2024.03 – 2024.05</span>
+      </div>
+      <div class="tl-role">后端开发 / 算法研究</div>
+      <p class="tl-desc">
+        使用 Spark、MySQL、Hive 完成数据处理与分析；理解并复现 Transformer、SVM 等人工智能核心算法。
+      </p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">华为鲲鹏开发者</span>
+        <span class="tl-date">2023.09 – 至今</span>
+      </div>
+      <div class="tl-role">云计算平台开发</div>
+      <p class="tl-desc">
+        参与鲲鹏云计算平台实现，负责基础软件层的定制开发与性能优化；使用监控工具跟踪系统性能，
+        排查并解决潜在问题；编写技术文档与开发手册。
+      </p>
+    </div>
+
+    <div class="tl-item tl-military">
+      <div class="tl-dot"></div>
+      <div class="tl-head">
+        <span class="tl-title">中国人民解放军驻香港部队</span>
+        <span class="tl-date">2021.09 – 2023.09</span>
+      </div>
+      <div class="tl-role">仪仗兵</div>
+      <p class="tl-desc">
+        圆满完成各项仪仗司礼任务，所在连队荣获<b>集体一等功</b>，退伍时被评为优秀退伍士兵。
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -103,31 +182,32 @@
       <span class="label">GitHub</span>
       <a href="https://github.com/unamed152" target="_blank" rel="noopener">@unamed152</a>
     </div>
+    <div class="contact-item">
+      <span class="label">简历</span>
+      <a href="resume.html">在线版</a>　·　<a href="resume.pdf" download>PDF 下载</a>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <p>© <span id="year"></span> unamed · Built with plain HTML/CSS · Hosted on GitHub Pages</p>
+  <p>© <span id="year"></span> 张荪宇 · Built with plain HTML/CSS · Hosted on GitHub Pages</p>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // 平滑滚动
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var t = document.querySelector(this.getAttribute('href'));
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
-  // 滚动淡入
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) en.target.classList.add('in'); });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.section, .proj').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.section, .tl-item').forEach(function (el) { io.observe(el); });
 
-  // 联系方式防爬：点击才揭示
   document.querySelectorAll('.reveal').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
