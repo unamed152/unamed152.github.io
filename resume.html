@@ -2,242 +2,298 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>张荪宇 - 简历</title>
+<meta name="description" content="张荪宇的在线简历 · 后端开发 / 大数据 / 人工智能">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
 <style>
-  @page { size: A4; margin: 10mm 14mm; }
+  @page { size: A4; margin: 10mm 13mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
     font-size: 9.8pt;
-    line-height: 1.48;
+    line-height: 1.52;
     color: #1a1a1a;
+    background: #f5f6f8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
     background: #fff;
+    padding: 26px 32px 34px;
+    border-radius: 12px;
+    box-shadow: 0 4px 28px rgba(0,0,0,.08);
   }
 
-  .page { max-width: 780px; margin: 0 auto; padding: 0; }
-
-  /* 头部 */
-  header { border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; margin-bottom: 13px; }
-  .name-row { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  h1 { font-size: 19pt; letter-spacing: 3px; font-weight: 700; }
-  .tagline { font-size: 10pt; color: #666; }
+  /* 顶部 */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 22px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid #1a1a1a;
+    margin-bottom: 15px;
+  }
+  .head-left { flex: 1; min-width: 0; }
+  h1 {
+    font-size: 20pt;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .tagline {
+    font-size: 10.5pt;
+    color: #3a5fa8;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+  }
   .contact {
-    margin-top: 10px;
-    display: flex; flex-wrap: wrap; gap: 6px 20px;
-    font-size: 10pt; color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 9.6pt;
+    color: #333;
   }
-  .contact span::before { content: ""; }
-  .contact b { font-weight: 600; color: #888; margin-right: 4px; }
+  .contact b { color: #888; font-weight: 600; margin-right: 3px; }
+  .photo {
+    flex: 0 0 88px;
+    width: 88px; height: 122px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #e2e5ea;
+  }
 
   /* 区块 */
-  section { margin-bottom: 12px; }
+  section { margin-bottom: 13px; }
   h2 {
     font-size: 11.5pt;
     font-weight: 700;
     letter-spacing: 1px;
-    padding-left: 8px;
+    padding-left: 9px;
     border-left: 4px solid #2b2b2b;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
 
   /* 条目 */
-  .item { margin-bottom: 9px; }
+  .item { margin-bottom: 10px; }
   .item:last-child { margin-bottom: 0; }
   .item-head {
     display: flex; justify-content: space-between;
-    align-items: baseline; gap: 12px; flex-wrap: wrap;
+    align-items: baseline; gap: 12px;
   }
-  .item-title { font-weight: 600; font-size: 11pt; }
-  .item-sub { color: #555; font-size: 10pt; }
-  .item-date { color: #666; font-size: 9.5pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .item-body { margin-top: 4px; color: #333; }
+  .item-title { font-weight: 700; font-size: 10.6pt; }
+  .item-role { color: #2f68b8; font-size: 9.6pt; margin-top: 1px; }
+  .item-date {
+    color: #666; font-size: 9.3pt; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .item-body { margin-top: 4px; }
   .item-body ul { list-style: none; }
-  .item-body li { position: relative; padding-left: 14px; margin-top: 3px; }
+  .item-body li { position: relative; padding-left: 15px; margin-top: 2px; color: #333; }
   .item-body li::before {
-    content: "▪";
-    position: absolute; left: 2px; color: #999; font-size: 9pt;
+    content: "▪"; position: absolute; left: 3px; color: #9aa4b2; font-size: 8.5pt;
   }
 
-  /* 技能 */
-  .skill-row { display: flex; gap: 10px; margin-bottom: 6px; }
-  .skill-row .k {
-    flex: 0 0 74px;
-    color: #444; font-weight: 600; font-size: 10pt;
+  /* 技能表格 */
+  .skill-table { width: 100%; border-collapse: collapse; }
+  .skill-table tr { border-bottom: 1px solid #eef0f3; }
+  .skill-table tr:last-child { border-bottom: none; }
+  .skill-table td { padding: 5px 0; vertical-align: top; }
+  .skill-table td.k {
+    width: 88px;
+    color: #2f68b8;
+    font-weight: 600;
+    padding-right: 12px;
+    white-space: nowrap;
   }
-  .skill-row .v { flex: 1; color: #333; }
+  .skill-table td.v { color: #333; }
 
-  /* 提示条（待确认项，打印时隐藏） */
-  .todo {
-    background: #fff8e1; border-left: 3px solid #f0ad4e;
-    padding: 6px 10px; margin-top: 6px;
-    font-size: 9.5pt; color: #8a6100;
-  }
+  /* 自我评价 */
+  .summary p + p { margin-top: 8px; }
+  .summary p { color: #333; }
 
-  /* 联系方式防爬：默认显示密文按钮，点击才揭示 */
+  /* 联系方式防爬 */
   .reveal {
-    color: #1a6ed8;
+    color: #2f68b8;
     text-decoration: none;
-    border-bottom: 1px dashed rgba(26,110,216,0.55);
+    border-bottom: 1px dashed rgba(47,104,184,.55);
     cursor: pointer;
   }
-  .reveal:hover { background: rgba(26,110,216,0.08); }
+  .reveal:hover { background: rgba(47,104,184,.08); }
   .reveal[data-done] { border-bottom: none; color: #1a1a1a; }
 
+  /* 返回按钮 */
+  .back {
+    max-width: 800px; margin: 0 auto 12px;
+    font-size: 9.5pt;
+  }
+  .back a { color: #2f68b8; text-decoration: none; }
+  .back a:hover { text-decoration: underline; }
+
   @media print {
-    .page { padding: 0; max-width: none; }
-    .todo { display: none; }
-    body { font-size: 10pt; }
+    body { background: #fff; font-size: 9.5pt; }
+    .page {
+      max-width: none; margin: 0; padding: 0;
+      border-radius: 0; box-shadow: none;
+    }
+    .back { display: none; }
     section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+    .reveal { border-bottom: none; color: #1a1a1a; }
+  }
+
+  @media (max-width: 560px) {
+    .page { padding: 20px 18px 28px; border-radius: 0; }
+    header { gap: 14px; }
+    .photo { flex: 0 0 70px; width: 70px; height: 97px; }
+    h1 { font-size: 17pt; letter-spacing: 2px; }
+    .skill-table td.k { width: 70px; }
   }
 </style>
 </head>
 <body>
+
+<div class="back"><a href="index.html">← 返回主页</a></div>
+
 <div class="page">
 
   <header>
-    <div class="name-row">
+    <div class="head-left">
       <h1>张荪宇</h1>
-      <span class="tagline">数据科学与大数据技术 · 本科 · 23 岁</span>
+      <div class="tagline">后端开发 / 大数据 / 人工智能</div>
+      <div class="contact">
+        <span><b>手机</b><a href="#" class="reveal" data-v="MTgwMDg2NTI2MjE=" data-t="tel">点击查看</a></span>
+        <span><b>邮箱</b><a href="#" class="reveal" data-v="MTQ2MTAzNTY4NEBxcS5jb20=" data-t="mail">点击查看</a></span>
+        <span><b>微信</b><a href="#" class="reveal" data-v="enN5MTQ2MTAzNTY4NA==" data-t="text">点击查看</a></span>
+        <span><b>年龄</b>25 岁　<b>学历</b>本科</span>
+      </div>
     </div>
-    <div class="contact">
-      <span><b>手机</b><a href="#" class="reveal" data-v="MTgwMDg2NTI2MjE=" data-t="tel">点击查看</a></span>
-      <span><b>邮箱</b><a href="#" class="reveal" data-v="MTQ2MTAzNTY4NEBxcS5jb20=" data-t="mail">点击查看</a></span>
-      <span><b>微信</b><a href="#" class="reveal" data-v="enN5MTQ2MTAzNTY4NA==" data-t="text">点击查看</a></span>
-    </div>
+    <img class="photo" src="photo.jpg" alt="证件照">
   </header>
 
   <section>
     <h2>教育背景</h2>
-
     <div class="item">
       <div class="item-head">
         <div>
           <span class="item-title">湖北工业大学</span>
-          <span class="item-sub">　数据科学与大数据技术　本科</span>
         </div>
-        <div class="item-date">2023.09 – 2026.07</div>
+        <div class="item-date">2022.09 – 2025.07</div>
       </div>
+      <div class="item-role">数据科学与大数据技术（本科）</div>
       <div class="item-body">
         <ul>
-          <li>主修课程：C 语言、数据结构与算法、计算机组成原理、操作系统、计算机网络、数据库、
-              离散数学、计算机导论、统计分析方法、大数据导论、数据存储、高性能计算、
-              人工智能、机器学习与数据挖掘</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-head">
-        <div>
-          <span class="item-title">前置学历</span>
-          <span class="item-sub">　<span style="color:#c00">［学校 / 专业待补充］</span></span>
-        </div>
-        <div class="item-date">2019.09 – 2021.07</div>
-      </div>
-      <div class="todo">⚠ 这一段（2019–2021）的学校名与专业你还没给我，我留了占位。补上我就填进去。</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>服役经历</h2>
-    <div class="item">
-      <div class="item-head">
-        <div>
-          <span class="item-title">中国人民解放军驻香港部队</span>
-          <span class="item-sub">　义务兵</span>
-        </div>
-        <div class="item-date">2021.09 – 2023.09</div>
-      </div>
-      <div class="item-body">
-        <ul>
-          <li>服役期间积极备战训练，锤炼能打仗、打胜仗的实战能力，并承担仪仗相关事务</li>
-          <li>所在连队荣获<b>集体一等功</b></li>
+          <li>主修课程：计算机导论、C 语言、离散数学、统计分析方法、数据结构与算法、计算机组成原理、
+              操作系统、大数据导论、计算机网络、数据存储、高性能计算、人工智能、机器学习与数据挖掘</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>项目与工作经历</h2>
+    <h2>工作经验</h2>
 
     <div class="item">
       <div class="item-head">
-        <div>
-          <span class="item-title">人工智能智能体开发</span>
-        </div>
+        <div><span class="item-title">人工智能智能体开发</span></div>
         <div class="item-date">2025.06 – 至今</div>
       </div>
+      <div class="item-role">AI Agent 开发工程师</div>
       <div class="item-body">
         <ul>
-          <li>基于大模型 API 构建智能体工作流，完成工具调用、多步任务编排与上下文管理</li>
+          <li>进行人工智能调用 API 实现智能体的工作流流程开发，构建高效的自动化任务处理系统</li>
+          <li>负责后端接口设计与开发，确保智能体与各服务模块的数据交互稳定可靠</li>
         </ul>
       </div>
     </div>
 
     <div class="item">
       <div class="item-head">
-        <div>
-          <span class="item-title">大数据后端服务器与人工智能核心算法开发</span>
-        </div>
+        <div><span class="item-title">课后实践项目：数据爬取与协同网站上线</span></div>
+        <div class="item-date">2025.06</div>
+      </div>
+      <div class="item-role">全栈开发 / 团队协作</div>
+      <div class="item-body">
+        <ul>
+          <li>与同学课后协作，完成数据爬取、前后端开发及网站上线全流程</li>
+          <li>负责后端接口设计与数据处理，实现爬取数据的存储、清洗与展示</li>
+          <li>前后端协同开发，确保数据交互顺畅，最终成功上线并稳定运行</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title">华为鲲鹏开发者</span></div>
+        <div class="item-date">2023.03 – 至今</div>
+      </div>
+      <div class="item-role">云计算平台开发</div>
+      <div class="item-body">
+        <ul>
+          <li>实现鲲鹏云计算平台，负责基础软件层的定制开发，优化系统性能与稳定性</li>
+          <li>熟练使用多种监控工具，实时跟踪系统性能，及时发现并解决潜在问题</li>
+          <li>编写技术文档与开发手册，输出高质量的后端技术内容，便于团队知识传承与协作</li>
+          <li>参与跨部门协同，与产品、运维等团队紧密配合，推进项目高效落地</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title">大数据后端服务器与人工智能核心算法开发</span></div>
         <div class="item-date">2024.03 – 2024.05</div>
       </div>
+      <div class="item-role">后端开发 / 算法研究</div>
       <div class="item-body">
         <ul>
-          <li>掌握后端 Hadoop 生态，使用 Spark、MySQL、Hive 完成数据处理与分析</li>
-          <li>理解并复现 Transformer、SVM 等人工智能核心算法</li>
+          <li>熟练掌握后端 Hadoop 技术生态，包括 Spark、MySQL、Hive 的使用与优化</li>
+          <li>理解并复现 Transformer、SVM 等人工智能核心算法，具备扎实的算法基础</li>
         </ul>
       </div>
     </div>
 
     <div class="item">
       <div class="item-head">
-        <div>
-          <span class="item-title">华为鲲鹏开发者</span>
-        </div>
-        <div class="item-date">2023.09 – 至今</div>
+        <div><span class="item-title">中国人民解放军驻香港部队</span></div>
+        <div class="item-date">2021.09 – 2023.09</div>
       </div>
+      <div class="item-role">仪仗兵</div>
       <div class="item-body">
         <ul>
-          <li>参与鲲鹏云计算平台实现，负责基础软件层的定制开发</li>
-          <li>使用多种监控工具实时跟踪系统性能，及时发现并解决潜在问题</li>
+          <li>思想上积极进取，始终以高标准严格要求自己，坚定理想信念，不断提升政治素养</li>
+          <li>态度上认真刻苦训练，锤炼过硬军事素质与仪仗队列技能，圆满完成各项仪仗司礼任务</li>
+          <li>服役期间所在连队荣获集体一等功，个人表现突出，退伍时被评为优秀退伍士兵</li>
+          <li>军旅生涯培养了极强的纪律意识、执行力与团队协作精神，善于沟通协调、高效执行</li>
         </ul>
-        <div class="todo">⚠ 原来写的是“2022.03 – 至今”，但那段时间你还在服役，我按服役结束（2023.09）往后调了。若实际是这个项目的真实起点，告诉我改回去。</div>
       </div>
     </div>
   </section>
 
   <section>
     <h2>技能清单</h2>
-    <div class="skill-row">
-      <div class="k">语言</div>
-      <div class="v">C、Java、Python、Scala</div>
-    </div>
-    <div class="skill-row">
-      <div class="k">大数据</div>
-      <div class="v">Hadoop、Spark、Hive、MySQL，具备分布式服务器开发经验</div>
-    </div>
-    <div class="skill-row">
-      <div class="k">证书</div>
-      <div class="v">全国计算机等级考试二级（CSP）、大学英语四级（CET-4）</div>
-    </div>
-    <div class="skill-row">
-      <div class="k">办公</div>
-      <div class="v">熟练使用 Windows 平台各类软件：Word、Excel、PowerPoint</div>
-    </div>
-    <div class="skill-row">
-      <div class="k">语言能力</div>
-      <div class="v">英语 CET-4，能熟练进行听、说、读、写</div>
-    </div>
+    <table class="skill-table">
+      <tr><td class="k">语言能力</td><td class="v">大学英语四级证书，能够熟练进行听、说、读、写</td></tr>
+      <tr><td class="k">编程语言</td><td class="v">熟练使用 C、Java、Python、Scala 等多种编程语言</td></tr>
+      <tr><td class="k">后端技术</td><td class="v">Hadoop 生态（Spark、Hive、MySQL），分布式服务器开发，云计算平台搭建</td></tr>
+      <tr><td class="k">人工智能</td><td class="v">Transformer、SVM 等核心算法复现与优化，AI 智能体工作流开发</td></tr>
+      <tr><td class="k">数据平台</td><td class="v">会使用简单数据平台（神策、友盟、内部数仓）进行数据查询与分析</td></tr>
+      <tr><td class="k">项目推进</td><td class="v">具备后台迭代、系统迁移、流程改版落地的项目推进能力</td></tr>
+      <tr><td class="k">对账基础</td><td class="v">理解结算逻辑，能协助财务核对订单资金，确保数据准确</td></tr>
+      <tr><td class="k">自动化思路</td><td class="v">善于利用表格、简易脚本减少重复手工操作，提升工作效率</td></tr>
+      <tr><td class="k">计算机基础</td><td class="v">计算机二级证书，CSP 证书，熟练操作 Windows 平台各类办公软件</td></tr>
+      <tr><td class="k">文档输出</td><td class="v">具备良好的后端技术文档撰写能力，能够清晰输出技术方案与开发文档</td></tr>
+      <tr><td class="k">跨部门协同</td><td class="v">善于与人交流沟通，具备丰富的团队协作与跨部门协调经验，能够独当一面</td></tr>
+    </table>
   </section>
 
-  <section>
+  <section class="summary">
     <h2>自我评价</h2>
-    <div class="item-body">
-      工作积极认真，细心负责，善于在工作中提出问题、发现问题并推动解决，具备较强的分析能力；
-      勤奋好学、踏实肯干、动手能力强；有过部队服役经历，纪律性与执行力强，能吃苦耐劳，
-      喜欢并勇于迎接新挑战。
-    </div>
+    <p>工作积极认真，细心负责，熟练运用办公自动化软件，善于在工作中提出问题、发现问题、解决问题，有较强的分析能力；勤奋好学，踏实肯干，动手能力强，认真负责，有很强的社会责任感；坚毅不拔，吃苦耐劳，喜欢和勇于迎接新挑战。</p>
+    <p>具备扎实的后端开发与大数据技术功底，能够独立完成系统设计与开发任务；拥有良好的技术文档输出能力，善于将复杂技术问题转化为清晰的文字表达。军旅生涯铸就了出色的沟通交流与跨部门协作能力，能够在团队中高效协调、积极推进项目进展，以严谨的态度和饱满的热情迎接每一项挑战。</p>
   </section>
 
 </div>
@@ -256,7 +312,7 @@
     else { el.removeAttribute('href'); }
   }
 
-  // 网页上：点击才揭示
+  // 网页：点击才揭示
   document.querySelectorAll('.reveal').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
@@ -264,7 +320,7 @@
     });
   });
 
-  // 打印 / 存 PDF 时：自动全部展开成明文
+  // 打印 / 存 PDF：自动全部展开成明文
   function expandAll() {
     document.querySelectorAll('.reveal').forEach(reveal);
   }
