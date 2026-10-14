@@ -91,14 +91,14 @@
 
   var BAND_SPREAD = 0.36;   /* 粒子带纵向厚度（占屏高比例）*/
 
-  /* 两根束带：分列左右两侧，摆幅让它们在画布中部交叠穿插 */
+  /* 两根束带：分列左右两侧，摆幅刚好让它们在中部交叠 */
   var TW = {
-    amp: 0.30,        /* 横向摆幅（画布宽比例）*/
+    amp: 0.21,        /* 横向摆幅（画布宽比例）—— 太大两条会重合糊成一块 */
     freq: 0.0050,     /* 纵向频率 */
-    w: 0.13,          /* 带宽（收窄，避免糊成一坨）*/
+    w: 0.11,          /* 带宽 */
     spins: 1.4,       /* 滚动加成：滚完一屏扭转 1.4 圈 */
     idle: 0.0032,     /* 自主缓慢扭动速度（不滚动时也在动）*/
-    centers: [0.34, 0.66]   /* 两条束带各自的中心位置 */
+    centers: [0.26, 0.74]   /* 两条束带各自的中心位置 */
   };
 
   function band(index, t) {
@@ -121,15 +121,15 @@
     var grad = ctx.createLinearGradient(0, 0, 0, H);
     if (index === 0) {
       grad.addColorStop(0.00, 'rgba(0,170,255,0)');
-      grad.addColorStop(0.20, 'rgba(0,170,255,0.40)');
-      grad.addColorStop(0.52, 'rgba(43,127,255,0.34)');
-      grad.addColorStop(0.80, 'rgba(0,120,230,0.24)');
+      grad.addColorStop(0.20, 'rgba(0,170,255,0.30)');
+      grad.addColorStop(0.52, 'rgba(43,127,255,0.26)');
+      grad.addColorStop(0.80, 'rgba(0,120,230,0.18)');
       grad.addColorStop(1.00, 'rgba(0,120,230,0)');
     } else {
       grad.addColorStop(0.00, 'rgba(0,212,255,0)');
-      grad.addColorStop(0.20, 'rgba(0,212,255,0.40)');
-      grad.addColorStop(0.52, 'rgba(100,170,255,0.34)');
-      grad.addColorStop(0.80, 'rgba(0,150,255,0.24)');
+      grad.addColorStop(0.20, 'rgba(0,212,255,0.30)');
+      grad.addColorStop(0.52, 'rgba(100,170,255,0.26)');
+      grad.addColorStop(0.80, 'rgba(0,150,255,0.18)');
       grad.addColorStop(1.00, 'rgba(0,150,255,0)');
     }
 
