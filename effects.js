@@ -96,7 +96,7 @@
   /* 单条束带 */
   var TW = {
     cx: 0.50,          /* 居中（区域只有一条带子）*/
-    amp: 0.15,         /* 横向摆幅 */
+    amp: 0.22,         /* 横向摆幅（加大，波形更明显）*/
     w: 0.20,           /* 带宽（变宽）*/
     waves: 2,          /* ★ 屏幕高度内恰好扭 2 个完整波 */
     spins: 1.2,        /* 滚动加成：滚完一屏扭转 1.2 圈 */
@@ -119,9 +119,9 @@
 
     var grad = ctx.createLinearGradient(0, 0, 0, H);
     grad.addColorStop(0.00, 'rgba(0,170,255,0)');
-    grad.addColorStop(0.18, 'rgba(0,170,255,0.30)');
-    grad.addColorStop(0.50, 'rgba(70,150,255,0.28)');
-    grad.addColorStop(0.82, 'rgba(0,150,255,0.22)');
+    grad.addColorStop(0.18, 'rgba(0,170,255,0.50)');
+    grad.addColorStop(0.50, 'rgba(70,150,255,0.46)');
+    grad.addColorStop(0.82, 'rgba(0,150,255,0.36)');
     grad.addColorStop(1.00, 'rgba(0,150,255,0)');
 
     var step = 6, y;
@@ -142,8 +142,8 @@
       if (y === 0) ctx.moveTo(xx, y);
       else ctx.lineTo(xx, y);
     }
-    ctx.lineWidth = 1.2;
-    ctx.strokeStyle = 'rgba(140,205,255,0.50)';
+    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = 'rgba(150,210,255,0.75)';
     ctx.stroke();
   }
 
